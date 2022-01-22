@@ -1,0 +1,14 @@
+{
+  "name": "covid19india-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:diptirani16/covid19india-api.git",
+  "author": "Dipti Rani <gdipti642@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "devDependencies": {
+    "vercel": "^23.1.2"
+  }
+}
