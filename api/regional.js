@@ -1,14 +1,17 @@
 const current = require('../data/current.json')
+const fullform = require('../data/fullform.json')
 
 export default function handler(req, res) {
-    let regional = [];
-    for(let state in current) {
-        regional = [...regional, `${state}: ${current[state].total}`]
-        console.log(regional);
-    }
-    res.status(200).json({      
-        regional: regional
-    });
+    let code = Object.keys(current);
+    let name = Object.values(fullform);
+    let codeValues = Object.values(current);
+    let counts = codeValues.map(i => {
+        return i.total;
+    })
+    let regional = code.map(function (value, index){
+        return {"code": value, "name": name[index], "counts": counts[index]}
+     });
+    res.status(200).json(regional)
   }
 
   /**
