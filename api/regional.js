@@ -8,8 +8,11 @@ export default function handler(req, res) {
     let counts = codeValues.map(i => {
         return i.total;
     })
+    let population = codeValues.map(i => {
+        return i.meta.population;
+    })
     let regional = code.map(function (value, index){
-        return {"code": value, "name": name[index], "counts": counts[index]}
+        return {"code": value, "name": name[index], "counts": counts[index], "population": population[index]}
      });
     res.status(200).json(regional)
   }

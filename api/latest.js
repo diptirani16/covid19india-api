@@ -2,7 +2,7 @@ const current = require('../data/current.json')
 
 export default function handler(req, res) {
     let totalConfirmed = 0, totalRecovered = 0, totalDeceased = 0, totalActive = 0;
-    // let lastUpdated = "";
+    let lastUpdated = current[0].meta.last_updated;
     for(let state in current) {
         totalConfirmed = totalConfirmed + current[state].total.confirmed
         totalRecovered = totalRecovered + current[state].total.recovered
